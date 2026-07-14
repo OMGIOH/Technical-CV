@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver Huang - Technical CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <section id="hero">
+        <div class="hero-logo-bar">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-mark">OH</span>
+                <span class="logo-text">技术履历 Technical CV</span>
+            </a>
+        </div>
+        <div class="hero-inner">
+                        <h1 class="hero-title">
+                <span class="hero-name">Oliver Huang</span>
+            </h1>
+            <p class="hero-subtitle">图书情报学硕士 <span class="hero-subtitle-en">Master of Library and Information Studies</span></p>
+            <p class="hero-desc">专注于信息资源管理与数字人文研究。<span class="hero-desc-en">Focusing on Information Resource Management & Digital Humanities.</span></p>
+            <p class="hero-desc">该履历旨在记录与呈现本人于硕士期间所习得的技术成果。<span class="hero-desc-en">This CV aims to record and present the technical achievements acquired during my master's studies.</span></p>
+        </div>
+        <div class="hero-scroll-hint">
+            <a href="#articles" aria-label="向下滚动"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <section id="articles">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title">目录 <span class="section-title-en">Contents</span></h2>
+            </div>
+            <div class="tech-toc">
+                <a href="#ai-detail" class="tech-toc-item">
+                    <span class="tech-toc-num">01</span>
+                    <div class="tech-toc-text">
+                        <span class="tech-toc-name">人工智能技术</span>
+                        <span class="tech-toc-name-en">Artificial Intelligence Technology</span>
+                    </div>
+                    <i class="fas fa-arrow-right tech-toc-arrow"></i>
+                </a>
+                <a href="#game-detail" class="tech-toc-item">
+                    <span class="tech-toc-num">02</span>
+                    <div class="tech-toc-text">
+                        <span class="tech-toc-name">游戏引擎与交互开发</span>
+                        <span class="tech-toc-name-en">Game Engine & Interactive Development</span>
+                    </div>
+                    <i class="fas fa-arrow-right tech-toc-arrow"></i>
+                </a>
+                <a href="#" class="tech-toc-item">
+                    <span class="tech-toc-num">03</span>
+                    <div class="tech-toc-text">
+                        <span class="tech-toc-name">数据挖掘、分析与可视化</span>
+                        <span class="tech-toc-name-en">Data Mining, Analysis & Visualization</span>
+                    </div>
+                    <i class="fas fa-arrow-right tech-toc-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== Intelligent Extraction ======================== -->
+    <section id="ai-detail" class="detail-section">
+        <div class="section-tag">
+            <a href="#articles">人工智能技术</a>
+        </div>
+        <div class="container">
+            <div class="detail-section-head">
+                <p class="detail-section-label">01 / Intelligent Extraction</p>
+                <h2 class="detail-section-title">智能抽取</h2>
+                <p class="detail-section-title-en">Intelligent Extraction</p>
+            </div>
+
+            <div class="pipeline">
+                <div class="pipeline-stage">
+                    <p class="pipeline-stage-num">Step 01</p>
+                    <div class="pipeline-stage-icon"><i class="fas fa-brain"></i></div>
+                    <p class="pipeline-stage-name">BERT-CRF 模型训练</p>
+                    <p class="pipeline-stage-name-en">BERT-CRF Model Training</p>
+                    <p class="pipeline-stage-desc">
+                        针对少数民族语言文本属于低资源语言、缺乏公开标注数据的困境，以 bert-base-chinese 为基础预训练模型，在领域语料上进行 MLM（掩码语言模型）继续预训练实现领域适应，使模型能够理解古话语境中的特殊表达与语义结构。微调阶段引入 CRF 层进行序列解码，对实体边界施加全局约束。预先定义四类实体标签（人物 PER、地点 LOC、器物 OBJ、仪式 RIT），构建实体字典与消歧规则辅助标注，模型在 9415 句语料上训练，五折交叉验证 F1 值达 0.9712。
+                    </p>
+                </div>
+                <div class="pipeline-stage">
+                    <p class="pipeline-stage-num">Step 02</p>
+                    <div class="pipeline-stage-icon"><i class="fas fa-project-diagram"></i></div>
+                    <p class="pipeline-stage-name">知识图谱自动构建</p>
+                    <p class="pipeline-stage-name-en">Automatic Knowledge Graph Construction</p>
+                    <p class="pipeline-stage-desc">
+                        基于 BERT-CRF 模型的实体识别结果，采用同句共现算法自动抽取实体间关系三元组，将非结构化的口传文本转化为结构化的知识网络。针对模型在低资源语言上预测的边界噪声，引入字典匹配策略在原文中精确最长匹配，绕过预测偏差。经双向冗余过滤与核心实体保留机制优化后，自动构建 149 条三元组（共现 95 条 + 知识补充 38 条 + 交叉验证 16 条），涵盖 74 个核心实体与 10 种关系类型，最终通过 ECharts 力导向图进行可视化。
+                    </p>
+                </div>
+            </div>
+
+            <div class="detail-desc-wrapper">
+                <p class="detail-hero-desc">
+                    通过模型训练与知识图谱构建的完整技术链路，为AIGC可控生成提供方法论支撑。
+                </p>
+                <p class="detail-hero-desc-en">
+                    Model training and knowledge graph construction for controllable AIGC.
+                </p>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <a href="#ai-competitions" aria-label="向下滚动"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- ======================== AI Part 2: Competitions ======================== -->
+    <section id="ai-competitions" class="detail-section">
+        <div class="section-tag">
+            <a href="#articles">人工智能技术</a>
+        </div>
+        <div class="container">
+            <div class="detail-section-head">
+                <p class="detail-section-label">02 / Competitions & Awards</p>
+                <h2 class="detail-section-title">学科竞赛</h2>
+                <p class="detail-section-title-en">Academic Competitions & Awards</p>
+            </div>
+
+            <div class="detail-desc-wrapper">
+                <div class="award-intro">
+                    <p class="award-intro-cn">
+                        依托AIGC与人工智能技术研究基础，参与多项学科竞赛，将AI技术与数字人文相结合，取得国家级奖项。
+                    </p>
+                    <p class="award-intro-en">
+                        Participated in multiple academic competitions leveraging AIGC and AI research, winning national-level awards.
+                    </p>
+                </div>
+            </div>
+
+            <div class="award-grid">
+                <div class="award-placeholder">
+                    <i class="fas fa-award"></i>
+                    <span>奖状占位 01</span>
+                </div>
+                <div class="award-placeholder">
+                    <i class="fas fa-award"></i>
+                    <span>奖状占位 02</span>
+                </div>
+                <div class="award-placeholder">
+                    <i class="fas fa-award"></i>
+                    <span>奖状占位 03</span>
+                </div>
+                <div class="award-placeholder">
+                    <i class="fas fa-award"></i>
+                    <span>奖状占位 04</span>
+                </div>
+                <div class="award-placeholder">
+                    <i class="fas fa-award"></i>
+                    <span>奖状占位 05</span>
+                </div>
+                <div class="award-placeholder">
+                    <i class="fas fa-award"></i>
+                    <span>奖状占位 06</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <a href="#aigc-portfolio" aria-label="向下滚动"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- ======================== AIGC Portfolio ======================== -->
+    <section id="aigc-portfolio" class="detail-section">
+        <div class="section-tag">
+            <a href="#articles">人工智能技术</a>
+        </div>
+        <div class="container">
+            <div class="detail-section-head">
+                <p class="detail-section-label">03 / AIGC Portfolio</p>
+                <h2 class="detail-section-title">AIGC作品集</h2>
+                <p class="detail-section-title-en">Video Portfolio</p>
+            </div>
+
+            <div class="detail-desc-wrapper">
+                <p class="detail-hero-desc">
+                    基于人工智能生成内容技术创作的视频作品，涵盖视觉转译、数字人文创意呈现等多种应用场景。
+                </p>
+                <p class="detail-hero-desc-en">
+                    Video works created using AIGC technologies, covering visual translation, digital humanities, and more.
+                </p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <span>视频占位 01</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>作品标题 01</h4>
+                        <p>待填充 / To be filled</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <span>视频占位 02</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>作品标题 02</h4>
+                        <p>待填充 / To be filled</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <span>视频占位 03</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>作品标题 03</h4>
+                        <p>待填充 / To be filled</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <span>视频占位 04</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>作品标题 04</h4>
+                        <p>待填充 / To be filled</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <span>视频占位 05</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>作品标题 05</h4>
+                        <p>待填充 / To be filled</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <span>视频占位 06</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>作品标题 06</h4>
+                        <p>待填充 / To be filled</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <a href="#game-detail" aria-label="向下滚动"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- ======================== Game Engine ======================== -->
+    <section id="game-detail" class="detail-section">
+        <div class="section-tag">
+            <a href="#articles">游戏引擎与交互开发</a>
+        </div>
+        <div class="container">
+            <div class="detail-section-head">
+                <p class="detail-section-label">02 / Game Engine & Interactive Development</p>
+                <h2 class="detail-section-title">苗绣拼图</h2>
+                <p class="detail-section-title-en">Miao Embroidery Puzzle</p>
+            </div>
+
+            <div class="detail-desc-wrapper">
+                <p class="detail-hero-desc">
+                    基于 Godot 引擎开发的苗绣拼图游戏，通过 WebAssembly 实现浏览器即开即玩。
+                </p>
+                <p class="detail-hero-desc-en">
+                    A Miao embroidery puzzle game built with Godot, running in browsers via WebAssembly.
+                </p>
+            </div>
+
+            <div class="game-frame-wrapper">
+                <iframe src="game/game.html" class="game-frame" title="苗绣拼图" loading="lazy" allow="autoplay; fullscreen; gamepad" allowfullscreen></iframe>
+                <div class="game-frame-fallback">
+                    <p>游戏加载中，请稍候... / Loading game, please wait...</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <a href="#articles" aria-label="返回目录"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <p class="footer-brand">Oliver Huang · Technical CV</p>
+            <p class="footer-copy">&copy; 2026 Oliver Huang. 保留所有权利。 All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="floating-controls">
+        <button id="float-top" aria-label="回到顶部">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <button id="theme-toggle" aria-label="切换主题">
+            <i class="fas fa-sun"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
