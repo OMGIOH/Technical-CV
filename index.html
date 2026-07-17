@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts-gl@2.0.9/dist/echarts-gl.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -42,7 +44,7 @@
                     </div>
                     <i class="fas fa-arrow-right tech-toc-arrow"></i>
                 </a>
-                <a href="#game-detail" class="tech-toc-item">
+                <a href="#ue-detail" class="tech-toc-item">
                     <span class="tech-toc-num">02</span>
                     <div class="tech-toc-text">
                         <span class="tech-toc-name">游戏引擎与交互开发</span>
@@ -50,7 +52,7 @@
                     </div>
                     <i class="fas fa-arrow-right tech-toc-arrow"></i>
                 </a>
-                <a href="#" class="tech-toc-item">
+                <a href="#dashboard" class="tech-toc-item">
                     <span class="tech-toc-num">03</span>
                     <div class="tech-toc-text">
                         <span class="tech-toc-name">数据挖掘、分析与可视化</span>
@@ -209,16 +211,54 @@
         </div>
     </section>
 
-    <!-- ======================== Game Engine ======================== -->
-    <section id="game-detail" class="detail-section">
+    <!-- ======================== Unreal Engine ======================== -->
+    <section id="ue-detail" class="detail-section">
         <div class="section-tag">
             <a href="#articles">游戏引擎与交互开发</a>
         </div>
         <div class="container">
             <div class="detail-section-head">
                 <p class="detail-section-label">02 / Game Engine & Interactive Development</p>
-                <h2 class="detail-section-title">苗绣拼图</h2>
-                <p class="detail-section-title-en">Miao Embroidery Puzzle</p>
+                <h2 class="detail-section-title">虚幻引擎</h2>
+                <p class="detail-section-title-en">Unreal Engine</p>
+            </div>
+            <div class="detail-desc-wrapper">
+                <p class="detail-hero-desc">
+                    基于虚幻引擎的三维场景构建与交互式可视化开发。
+                </p>
+                <p class="detail-hero-desc-en">
+                    3D scene construction and interactive visualization development based on Unreal Engine.
+                </p>
+            </div>
+            <div class="ue-image-grid">
+                <div class="ue-image-card">
+                    <img src="pictures/1.png" alt="Unreal Engine 1" loading="lazy">
+                </div>
+                <div class="ue-image-card">
+                    <img src="pictures/2.png" alt="Unreal Engine 2" loading="lazy">
+                </div>
+                <div class="ue-image-card">
+                    <img src="pictures/3.png" alt="Unreal Engine 3" loading="lazy">
+                </div>
+            </div>
+            <div class="ue-video-wrapper">
+                <video controls preload="metadata">
+                    <source src="videos/4.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== Godot Engine ======================== -->
+    <section id="godot-detail" class="detail-section">
+        <div class="section-tag">
+            <a href="#articles">游戏引擎与交互开发</a>
+        </div>
+        <div class="container">
+            <div class="detail-section-head">
+                <p class="detail-section-label">02 / Game Engine & Interactive Development</p>
+                <h2 class="detail-section-title">Godot 引擎</h2>
+                <p class="detail-section-title-en">Godot Engine</p>
             </div>
 
             <div class="detail-desc-wrapper">
@@ -231,9 +271,87 @@
             </div>
 
             <div class="game-frame-wrapper">
-                <iframe src="game/game.html" class="game-frame" title="苗绣拼图" loading="lazy" allow="autoplay; fullscreen; gamepad" allowfullscreen></iframe>
+                <iframe src="game/game.html" class="game-frame" title="Godot 引擎" loading="lazy" allow="autoplay; fullscreen; gamepad" allowfullscreen></iframe>
                 <div class="game-frame-fallback">
                     <p>游戏加载中，请稍候... / Loading game, please wait...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================== Data Dashboard ======================== -->
+    <section id="dashboard" class="detail-section">
+        <div class="section-tag">
+            <a href="#articles">数据挖掘、分析与可视化</a>
+        </div>
+        <div class="container">
+            <div class="detail-section-head">
+                <p class="detail-section-label">03 / Data Mining, Analysis and Visualization</p>
+                <h2 class="detail-section-title">数据大屏</h2>
+                <p class="detail-section-title-en">Data Dashboard</p>
+            </div>
+            <div class="detail-desc-wrapper">
+                <p class="detail-hero-desc">
+                    基于 ECharts 构建的交互式数据可视化大屏，集成地图热力、飞线动效、涟漪散点、三维柱状图等动态图表。
+                </p>
+                <p class="detail-hero-desc-en">
+                    An interactive data visualization dashboard built with ECharts, featuring map heatmaps, fly-line animations, ripple scatter, and 3D bar charts.
+                </p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dash-kpi-row">
+                    <div class="dash-kpi">
+                        <span class="dash-kpi-value" data-target="2.68">0</span>
+                        <span class="dash-kpi-unit">亿</span>
+                        <span class="dash-kpi-label">AI用户 <span class="dash-kpi-label-en">(Users)</span></span>
+                        <span class="dash-kpi-trend dash-kpi-up">+12.3%</span>
+                    </div>
+                    <div class="dash-kpi">
+                        <span class="dash-kpi-value" data-target="5847">0</span>
+                        <span class="dash-kpi-unit">家</span>
+                        <span class="dash-kpi-label">AI企业 <span class="dash-kpi-label-en">(Companies)</span></span>
+                        <span class="dash-kpi-trend dash-kpi-up">+8.7%</span>
+                    </div>
+                    <div class="dash-kpi">
+                        <span class="dash-kpi-value" data-target="18.53">0</span>
+                        <span class="dash-kpi-unit">万亿</span>
+                        <span class="dash-kpi-label">GDP <span class="dash-kpi-label-en">(CNY)</span></span>
+                        <span class="dash-kpi-trend dash-kpi-up">+4.7%</span>
+                    </div>
+                    <div class="dash-kpi">
+                        <span class="dash-kpi-value" data-target="97.12">0</span>
+                        <span class="dash-kpi-unit">%</span>
+                        <span class="dash-kpi-label">F1值 <span class="dash-kpi-label-en">(Score)</span></span>
+                        <span class="dash-kpi-trend dash-kpi-up">+2.1%</span>
+                    </div>
+                </div>
+
+                <div class="dash-map-row">
+                    <div class="dash-chart dash-chart-map">
+                        <div id="chart-map" class="dash-chart-inner"></div>
+                    </div>
+                    <div class="dash-map-side">
+                        <div class="dash-chart dash-chart-rank">
+                            <div id="chart-rank" class="dash-chart-inner"></div>
+                        </div>
+                        <div class="dash-chart dash-chart-ring">
+                            <div id="chart-ring" class="dash-chart-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-charts-row">
+                    <div class="dash-chart dash-chart-heatmap">
+                        <div id="chart-heatmap" class="dash-chart-inner"></div>
+                    </div>
+                    <div class="dash-chart dash-chart-scatter">
+                        <div id="chart-scatter" class="dash-chart-inner"></div>
+                    </div>
+                    <div class="dash-chart dash-chart-bar3d">
+                        <div id="chart-bar3d" class="dash-chart-inner"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -254,6 +372,8 @@
             <button class="page-dot" data-index="3"></button>
             <button class="page-dot" data-index="4"></button>
             <button class="page-dot" data-index="5"></button>
+            <button class="page-dot" data-index="6"></button>
+            <button class="page-dot" data-index="7"></button>
         </div>
     </nav>
 
@@ -273,6 +393,7 @@
         <source src="music/181427154-1-208.mp3" type="audio/mpeg">
     </audio>
 
+    <script src="dashboard/dashboard.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

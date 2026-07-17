@@ -111,7 +111,7 @@
     }
 
     // ============== 右侧导航点 ==============
-    var sections = ['hero', 'articles', 'ai-detail', 'ai-competitions', 'aigc-portfolio', 'game-detail'];
+    var sections = ['hero', 'articles', 'ai-detail', 'ai-competitions', 'aigc-portfolio', 'ue-detail', 'godot-detail', 'dashboard'];
     var dots = document.querySelectorAll('.page-dot');
     var dotsTrack = document.getElementById('page-dots-track');
     var currentSection = 0;
