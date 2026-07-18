@@ -1253,7 +1253,7 @@ a:hover {
     display: block;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    background: var(--bg-deep);
+    background: transparent;
 }
 
 .ue-video-wrapper {
@@ -1275,8 +1275,8 @@ a:hover {
     width: 100%;
     display: block;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
-    background: var(--bg-deep);
+    object-fit: contain;
+    background: #000;
 }
 
 /* ============== Game Frame ============== */
